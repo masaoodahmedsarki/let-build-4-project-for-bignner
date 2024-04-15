@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+    <style>
+        .btn {
+            padding:30px 53px;
+           margin-bottom: 2px;
+           background: var(--color);
+           cursor: pointer; 
+          }
+          .btn-1{--color:red;}
+          .btn-2{--color:green;}
+          .btn-3{--color:blue;}
+          .btn-4{--color:pink;}
+          .btn-5{--color:yellow;}
+    </style>
+</head>
+<body>
+    <h1>Change Document background Color with Button Click Event</h1>
+    <button class="btn btn-1"></button>
+    <button class="btn btn-2"></button>
+    <button class="btn btn-3"></button>
+    <button class="btn btn-4"></button>
+    <button class="btn btn-5"></button>
+       
+    <script>
+        let btns = 
+        document.getElementsByClassName("btn");
+        for(let i = 0; i< btns.length; i++){
+            btns[i].addEventListener("click",function(){
+                let buttonStyle = getComputedStyle(this);
+                let buttonBgColor = 
+                buttonStyle["backgroundColor"];
+                document.body.style.backgroundColor = buttonBgColor;
+            });
+        }
+    </script>
+</body>
+</html>
